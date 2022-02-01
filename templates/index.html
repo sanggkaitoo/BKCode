@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>BKCode</title>
+        <link
+            rel="stylesheet"
+            href="{% static 'lib/bootstrap4/css/bootstrap.min.css' %}"
+        />
+        <link rel="stylesheet" href="{% static 'css/common.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    </head>
+    <body>
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-light justify-content-between container">
+            <a class="navbar-brand">
+                <img
+                    src="{% static 'images/logo/Logo.png' %}"
+                    alt=""
+                    height="23px"
+                />
+            </a>
+            <div class="nav-button-wrap">
+                <a href="{% url 'login-page' %}" class="btn hovaer nav-login nav-button">Login</a>
+                <a href="{% url 'signup-page' %}" class="btn hover nav-sign-up nav-button">Sign Up</a>
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Body -->
+        <div class="body-wrap container">
+            <div class="col-lg-6 p-0">
+                <h3 class="text-big mb-5">A New Way to Teach and Learn</h3>
+                <div class="row m-0">
+                    <div class="col-lg-6 p-0">
+                        <p class="title">For Teacher</p>
+                        <p class="pr-4">Sign up, create class, add exercise and manage all your students. And you can create some exersice for other people to challlenge them.</p>
+                        <button class="btn btn-c btn-success btn-custom">Create Class</button>
+                    </div>
+                    <div class="col-lg-6 p-0">
+                        <p class="title">For Student</p>
+                        <p class="pr-4">BKCode is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.</p>
+                        <button class="btn btn-c btn-outline-success btn-outline-custom">Sign up & Code</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 ml-3">
+                <img src="{% static 'images/index-page/Big Image.png' %}" alt="" height="520px">
+            </div>
+        </div>
+
+        <div class="footer container">
+            <p>Copyright © 2021 <a class="link-to-fb" href="fb.com/pmsangg">ManhSang</a></p>
+        </div>
+
+        <canvas id="canvas"></canvas>
+
+        <script src="{% static 'lib/jquery-3.6.0.min.js' %}""></script>
+        <script src="{% static 'js/common.js' %}""></script>
+        <script src="{% static 'lib/bootstrap4/js/bootstrap.min.js' %}""></script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+.navbar {
+    padding-top: 40px;
+}
+
+.nav-button {
+    color: #333333;
+}
+
+.nav-sign-up {
+    margin-left: 20px;
+    border: 1px solid #333333;
+    padding: 5px 20px;
+}
+
+.hover:hover {
+    color: #b20606;
+}
+
+.nav-sign-up:hover {
+    border-color: #b20606;
+}
+
+.body-wrap {
+    height: calc(100vh - 88px - 100px);
+}
+
+.text-big {
+    font-family: SourceCodePro;
+    font-size: 2.7em;
+}
+
+.title {
+    font-family: SourceCodePro;
+    font-size: 1.4em;
+}
+
+.btn-c {
+    font-family: SourceCodePro;
+    padding: 10px 25px;
+}
+
+.footer {
+    height: 100px;
+}
+
+.link-to-fb {
+    color: #b20606;
+}
+
+.link-to-fb:hover {
+    text-decoration: underline;
+    color: #b20606;
+}

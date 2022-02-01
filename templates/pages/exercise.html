@@ -1,0 +1,146 @@
+{% extends 'pages/layout/base.html' %}
+
+{% load static %}
+
+{% block cssblock %}
+<script src="{% static 'lib/codemirror/lib/codemirror.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/pages/exercise.css' %}" />
+<link rel="stylesheet" href="{% static 'lib/codemirror/lib/codemirror.css' %}" />
+<!-- Language -->
+<script src="{% static 'lib/codemirror/mode/python/python.js' %}"></script>
+<script src="{% static 'lib/codemirror/mode/javascript/javascript.js' %}"></script>
+<script src="{% static 'lib/codemirror/mode/clike/clike.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-10">
+        <div class="column">
+            <h3 class="text-center">{{ exercise.title }} - {{ exercise.name }}</h3>
+            <div class="exercise-content">
+                <h3 class="sub-title-exercise">Đề bài</h3>
+                <p class="content-exercise">
+                    {{ exercise.question }}
+                </p>
+                <h3 class="sub-title-exercise">Dữ liệu vào</h3>
+                <p class="content-exercise">
+                    {{ exercise.input }}
+                </p>
+                <h3 class="sub-title-exercise">Dữ liệu ra</h3>
+                <p class="content-exercise">
+                    {{ exercise.output }}
+                </p>
+                <h3 class="sub-title-exercise">Example</h3>
+                <div class="row mt-4 mb-4">
+                    <div class="col-lg-6">
+                        <p class="example-title">Sample Input</p>
+                        <pre class="code-example">{{ exercise.test_case }}</pre>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="example-title">Sample Out</p>
+                        <pre class="code-example">{{ exercise.output_test_case }}</pre>
+                    </div>
+                </div>
+                <h3 class="sub-title-exercise">Nguồn</h3>
+                <p class="content-exercise">
+                    {{ exercise.author }}
+                </p>
+            </div>
+        </div>
+        <div class="column mt-4 p-4">
+            <form action="">
+                <div>
+                    <div class="mb-3">
+                        <label for="language" class="mr-2">Ngôn ngữ</label>
+                        <select name="" id="language">
+                            {% for language in exercise.language.all %}
+                                <option value={{ language.id }}>{{ language }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <textarea id="code-input" class="code-input"></textarea>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-c btn-success btn-custom mt-3">
+                        <i class="far fa-paper-plane mr-2"></i>
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="column">
+            <div class="tab-column">
+                <i class="fas fa-cloud-upload-alt mr-3"></i>
+                Nộp bài
+            </div>
+            <div class="tab-column">
+                <i class="fas fa-list mr-3"></i>
+                Danh sách bài nộp
+            </div>
+        </div>
+        <div class="column mt-3 p-column">
+            <div class="mb-3">
+                <i class="fas fa-info-circle mr-2"></i>
+                Thông tin bài tập
+            </div>
+            <div>
+                <table class="table infor-ex table-borderless">
+                    <tbody>
+                      <tr>
+                        <th scope="row">ID</th>
+                        <td class="text-right">{{ exercise.title }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Time limit</th>
+                        <td class="text-right">{{ exercise.time_limits }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Memory limit</th>
+                        <td class="text-right">{{ exercise.memory_limits }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Author</th>
+                        <td class="text-right">{{ exercise.author }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Level</th>
+                        <td class="text-right">{{ exercise.level }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Tag</th>
+                        <td class="text-right">{{ exercise.category }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="column mt-3 p-column">
+            <div class="mb-3">
+                <i class="fas fa-file mr-2"></i>
+                Bài tập tương tự
+            </div>
+            <div class="excercise-related">
+                <ul>
+                    <li><a href="#">Test excercise</a></li>
+                    <li><a href="#">Test excercise</a></li>
+                    <li><a href="#">Test excercise</a></li>
+                    <li><a href="#">Test excercise</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsblock %}
+
+
+<script src="{% static 'js/code.js' %}"></script>
+
+{% endblock %}

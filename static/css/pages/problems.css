@@ -1,0 +1,41 @@
+.table-head {
+    font-size: 1.3em;
+    font-family: SourceCodePro;
+    padding: 15px 20px;
+}
+
+.table tr th {
+    font-family: RobotoRegular;
+}
+
+.table .level {
+    padding: 5px 5px;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.table .level-easy {
+    background-color: rgb(57, 165, 57);
+}
+
+.table .level-medium {
+    background-color: rgb(0, 35, 236);
+}
+
+.table .level-hard {
+    background-color: #b20606;
+}
+
+.category-tag {
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.01);
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.page {
+    float: right;
+}

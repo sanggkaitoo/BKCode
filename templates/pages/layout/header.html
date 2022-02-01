@@ -1,0 +1,55 @@
+{% load static %}
+
+<div id="header">
+    <ul class="navbar-wrap">
+        <div class="navbar-logo">
+            <a href="{% url 'index-page' %}">
+                <img src="{% static 'images/logo/Logo.png' %}" alt="Logo" height="30px;">
+            </a>
+        </div>
+        <li class="navbar-item active">
+            <a href="{% url 'problems-page' %}">
+                <i class="fas fa-th"></i>
+                Problems
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="">
+                <i class="fas fa-graduation-cap"></i>
+                Learn
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="">
+                <i class="fas fa-users-class"></i>
+                Class
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="">
+                <i class="fas fa-trophy"></i>
+                Contest
+            </a>
+        </li>
+        <li class="navbar-item">
+            <a href="">
+                <i class="fas fa-info-circle"></i>
+                About Us
+            </a>
+        </li>
+        <div class="navbar-item navbar-user">
+            <div>
+                <i class="fas fa-user-alt"></i>
+                {{ request.user }}
+                <i class="fas fa-sort-down"></i>
+            </div>
+            <div class="navbar-sub-item-wrap">
+                <ul class="navbar-sub-item">
+                    <li>Xem hồ sơ</li>
+                    <li>Đổi mật khẩu</li>
+                    <li><a href="{% url 'logout-user' %}">Thoát</a></li>
+                </ul>
+            </div>
+        </div>
+    </ul>
+</div>

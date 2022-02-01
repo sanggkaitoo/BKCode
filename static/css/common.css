@@ -1,0 +1,273 @@
+@font-face {
+    font-family: RobotoRegular;
+    src: url(../font/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: RobotoBold;
+    src: url(../font/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: SourceCodePro;
+    src: url(../font/Source_Code_Pro/static/SourceCodePro-Bold.ttf);
+}
+
+@font-face {
+    font-family: RobotoLight;
+    src: url(../font/Roboto/Roboto-Light.ttf);
+}
+
+body,
+canvas {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    font-family: RobotoLight;
+}
+
+body {
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+#canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0.2;
+}
+
+.body-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom {
+    background: #b20606;
+}
+
+.btn-custom:hover {
+    background: #810404;
+}
+
+.btn-c {
+    border-color: #b20606;
+}
+
+.btn-outline-custom {
+    color: #b20606;
+}
+
+.btn-outline-custom:hover {
+    background: #b20606;
+    color: #fff;
+}
+
+#content-wrap {
+    padding: 0 2%;
+    margin-top: 80px;
+}
+
+/* Header */
+
+#header {
+    min-width: 300px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: auto;
+    background-color: #fff;
+}
+
+#header a {
+    color: #333;
+}
+
+#header::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #dcdee2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#header a:hover {
+    text-decoration: none;
+}
+
+.navbar-wrap {
+    height: 60px;
+    line-height: 60px;
+    display: block;
+    list-style: none;
+    color: #333;
+    position: relative;
+    margin: 1px;
+}
+
+.navbar-item {
+    float: left;
+    font-size: 15px;
+    height: 60px;
+    border-bottom: solid 2px transparent;
+    transition: all ease 0.15s;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.navbar-logo {
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.active {
+    border-bottom: solid 2px #b20606;
+}
+
+.active i,
+.active a {
+    color: #b20606 !important;
+}
+
+.navbar-item:hover {
+    border-bottom: solid 2px #b20606;
+}
+
+.navbar-item:hover a,
+.navbar-item:hover i {
+    color: #b20606 !important;
+}
+
+.navbar-user {
+    float: right;
+    margin-right: 4%;
+    position: relative;
+}
+
+.navbar-user:hover {
+    border-bottom: solid 2px transparent;
+}
+
+.navbar-user:hover .navbar-sub-item-wrap {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    top: 61px;
+    left: 20px;
+}
+
+.navbar-item .fas {
+    margin-left: 5px;
+    margin-right: 10px;
+    transition: all ease 0.15s;
+}
+
+.navbar-sub-item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-sub-item li {
+    margin: 0;
+    padding-left: 10px;
+    list-style: 35px;
+    transition: all ease 0.15s;
+    line-height: 40px;
+}
+
+.navbar-sub-item li:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.navbar-sub-item-wrap {
+    min-width: 130px;
+    visibility: hidden;
+    opacity: 0;
+    top: 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+    border-radius: 4px;
+    transition: all ease 0.15s;
+}
+
+/* End Header */
+
+/* Body */
+
+.column {
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    /* padding: 0; */
+    /* margin: 0 15px; */
+}
+
+/* Page pagination */
+
+.page-wrap {
+    list-style: none;
+}
+
+.page-button {
+    float: left;
+    padding: 10px;
+}
+
+.page-active {
+    color: #b20606;
+}
+
+
+/* End page pagination */
+
+.code-example {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace,
+        serif;
+        
+    margin-bottom: 10px;
+    overflow: auto;
+    width: auto;
+    padding: 10px 15px !important;
+    border: solid 1px rgb(201, 201, 201);
+    color: #616161;
+    padding-bottom: 20px;
+    max-height: 800px;
+    border-left: solid 4px rgb(201, 201, 201);
+}
+
+select {
+    padding: 5px 5px;
+    border: 1px solid rgb(201, 201, 201);
+    color: #333333;
+    outline: none;
+    min-width: 110px;
+}
+
+.tab-column {
+    padding: 18px 15px;
+}
+
+.p-column {
+    padding: 14px 16px;
+}
+
+/* End body */
