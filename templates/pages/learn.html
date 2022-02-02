@@ -1,0 +1,52 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-xl-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">HTML</h5>
+          <p class="card-text">The language for building web pages.</p>
+          <a href="#" class="btn btn-primary">Learn</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}
