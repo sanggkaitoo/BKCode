@@ -133,3 +133,18 @@ init();
 
 
 $('.toast').toast('show');
+
+$(document).ready( function () {
+  $('#problemsTable').DataTable({
+    
+  });
+} );
+
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\math(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};

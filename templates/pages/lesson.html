@@ -1,0 +1,36 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/lesson.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xl-2 p-2">
+            <div class="column">
+                <h4 class="p-3 pb-0">Java Tutorial</h4>
+                <div class="pb-3 list-lesson">
+                    {% for item in lesson %}
+                        {% if item.0.section == content.section %}
+                            <a href="{% url 'lesson-content' subject item.1 %}" class="d-block pl-3 pb-2 pt-2 active">{{ item.0.section }}</a>
+                        {% else %}
+                            <a href="{% url 'lesson-content' subject item.1 %}" class="d-block pl-3 pb-2 pt-2">{{ item.0.section }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-10 p-2">
+            <div class="column p-3">
+                {% load editorjs %}
+                {{ content.content | editorjs }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

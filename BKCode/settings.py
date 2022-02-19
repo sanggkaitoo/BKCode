@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'exercise',
     'lesson',
     'programming_language',
-    'user_profile'
+    'user_profile',
+    'django_editorjs_fields'
 ]
 
 MIDDLEWARE = [

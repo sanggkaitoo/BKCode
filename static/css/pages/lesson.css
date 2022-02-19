@@ -1,0 +1,20 @@
+.list-lesson a {
+    color: #333333;
+    transition: all ease .1s;
+}
+
+.list-lesson a:hover {
+    background-color: #bebebe;
+    text-decoration: none;
+    color: #fff;
+}
+
+.list-lesson .active {
+    background-color: #b20606;
+    color: #fff;
+}
+
+.list-lesson .active:hover {
+    background-color: #b20606;
+    color: #fff;
+}

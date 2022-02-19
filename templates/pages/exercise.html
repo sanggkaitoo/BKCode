@@ -1,6 +1,7 @@
 {% extends 'pages/layout/base.html' %}
 
 {% load static %}
+{% load editorjs %}
 
 {% block cssblock %}
 <script src="{% static 'lib/codemirror/lib/codemirror.js' %}"></script>
@@ -22,15 +23,15 @@
             <div class="exercise-content">
                 <h3 class="sub-title-exercise">Đề bài</h3>
                 <p class="content-exercise">
-                    {{ exercise.question }}
+                    {{ exercise.question | editorjs }}
                 </p>
                 <h3 class="sub-title-exercise">Dữ liệu vào</h3>
                 <p class="content-exercise">
-                    {{ exercise.input }}
+                    {{ exercise.input | editorjs }}
                 </p>
                 <h3 class="sub-title-exercise">Dữ liệu ra</h3>
                 <p class="content-exercise">
-                    {{ exercise.output }}
+                    {{ exercise.output | editorjs }}
                 </p>
                 <h3 class="sub-title-exercise">Example</h3>
                 <div class="row mt-4 mb-4">
@@ -139,7 +140,6 @@
 {% endblock %}
 
 {% block jsblock %}
-
 
 <script src="{% static 'js/code.js' %}"></script>
 

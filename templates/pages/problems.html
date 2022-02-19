@@ -9,52 +9,38 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-9 p-2">
-      <h2></h2>
-      <table class="table table-hover column">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="column">
+        <h3 class="table-head">Problems List</h3>
+        <table id="problemsTable" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Level</th>
+              <th scope="col">Tag</th>
+              <th scope="col">Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ex in exercise %}
+            <tr>
+              <th scope="row">{{ ex.id }}</th>
+              <td><a class="link-color" href="{% url 'exercise' ex.slug %}">{{ ex.name }}</a></td>
+              <td><span class="level level-{{ ex.level }}">{{ ex.level }}</span></td>
+              <td>@{{ ex.category }}</td>
+              <td>{{ ex.author }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="col-lg-3 p-2">
-      <div class="column p-1 pt-3 pb-3">
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
-        <span class="category-tag">BFS</span>
+      <div class="column">
+        <h3 class="table-head">Category</h3>
+        <div class="tag pl-3 pr-3 pb-3">
+          <button class="category-tag mb-2 transition-3">BFS</button>
+        </div>
       </div>
     </div>
   </div>

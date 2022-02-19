@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django_editorjs_fields import EditorJsTextField
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from django.utils import timezone
@@ -30,9 +31,9 @@ class Exercise(models.Model):
     )
     level = models.CharField(choices=level_choice, max_length=6)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts', related_query_name='post')
-    question = models.TextField()
-    input = models.TextField()
-    output = models.TextField()
+    question = EditorJsTextField()
+    input = EditorJsTextField()
+    output = EditorJsTextField()
     test_case = models.TextField(null=True, blank=True)
     output_test_case = models.TextField()
     language = models.ManyToManyField(ProgrammingLanguage)

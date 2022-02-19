@@ -270,4 +270,21 @@ select {
     padding: 14px 16px;
 }
 
+.transition-15 {
+    transition: all ease .15s;
+}
+
+.transition-3 {
+    transition: all ease .30s;
+}
+
+.link-color {
+    color: #b20606;
+}
+
+.link-color:hover {
+    color: #b20606;
+    text-decoration: underline;
+}
+
 /* End body */

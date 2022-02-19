@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout/', user_views.logout_user, name='logout-user'),
     path('sign-up/', user_views.register, name='signup-page'),
     path('problems/', include('exercise.urls')),
+    path('learn/', include('lesson.urls')),
 ]

@@ -28,7 +28,7 @@
 }
 
 .category-tag {
-    padding: 5px 10px;
+    padding: 3px 10px;
     background-color: rgba(0, 0, 0, 0.01);
     border: solid 1px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -36,6 +36,39 @@
     margin-bottom: 5px;
 }
 
+.category-tag:hover {
+    border-color: #b20606;
+    color: #b20606;
+}
+
 .page {
     float: right;
+}
+
+.dataTables_length, .dataTables_info {
+    margin-left: 20px;
+    font-size: 0.8em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.dataTables_filter, .dataTables_paginate {
+    margin-right: 20px !important;
+    font-size: 0.8em;
+    margin-top: 15px !important;
+    margin-bottom: 15px;
+}
+
+.pagination .active {
+    border: none;
+}
+
+.pagination .page-link {
+    color: #b20606;
+}
+
+.pagination .active .page-link {
+    background-color: #b20606;
+    border-color: #b20606;
+    color: #fff !important;
 }

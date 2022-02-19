@@ -13,6 +13,9 @@
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="{% static 'lib/fontawesome5.15/css/all.min.css' %}">
     <!--===============================================================================================-->
+        <!-- <link rel="stylesheet" type="text/css" href="{% static 'lib/datatable/dataTables.min.css' %}"> -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/b-2.2.2/r-2.2.9/sb-1.3.1/sp-1.4.0/datatables.min.css"/>
+    <!--===============================================================================================-->
         <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <!--===============================================================================================-->
 
@@ -21,6 +24,27 @@
 
 </head>
 <body>
+
+    {% for message in messages %}
+
+	<div aria-live="polite" aria-atomic="true" style="position: relative;">
+		<!-- Position it -->
+		<div style="position: absolute; top: 20px; right: 50px;">
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+				<div class="toast-header">
+					<strong class="mr-auto">Notification</strong>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">
+					{{ message }}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% endfor %}
 
     {% include 'pages/layout/header.html' %}
 
@@ -41,14 +65,17 @@
     <script src="{% static 'lib/bootstrap4/js/popper.js' %}"></script>
     <script src="{% static 'lib/bootstrap4/js/bootstrap.min.js' %}"></script>
     <!--===============================================================================================-->
-    <script src="{% static 'js/common.js' %}"></script>
-    <!--===============================================================================================-->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!--===============================================================================================-->
-
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.4/b-2.2.2/r-2.2.9/sb-1.3.1/sp-1.4.0/datatables.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/common.js' %}"></script>
+    <!--===============================================================================================-->
+    
     {% block jsblock %}
     {% endblock %}
     
+
 </body>
 </html>
