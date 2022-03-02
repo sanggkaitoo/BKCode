@@ -3,8 +3,37 @@ from .forms import CreateUserForm
 from django.contrib import messages
 
 from django.contrib.auth import authenticate, login, logout
+from .models import User, UserProfile
+from code_submission.models import CodeSubmission
 
 from django.contrib.auth.decorators import login_required
+
+
+def index(request):
+
+    profile = UserProfile.objects.get(user=request.user)
+
+    submit = CodeSubmission.objects.filter(user=request.user)
+    accept = CodeSubmission.objects.filter(user=request.user, status='ACCEPTED')
+    point = 0
+    for item in accept:
+        if item.exercise.level == 'easy':
+            point = point + 50
+        elif item.exercise.level == 'medium':
+            point = point + 100
+        else:
+            point = point + 150
+
+    submit_status = [len(submit), len(accept), point]
+
+    context = {
+        'user': request.user,
+        'profile': profile,
+        'submit': submit_status
+    }
+    print(submit_status)
+
+    return render(request, 'pages/profile.html', context)
 
 
 def register(request):

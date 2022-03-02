@@ -1,0 +1,32 @@
+.wrap-bg {
+    margin-top: 200px;
+}
+
+.profile-wrap {
+    position: relative;
+    padding: 70px;
+}
+
+.avatar {
+    background-image: url(https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/269017654_3062944380631158_4725085298400037399_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=VR8Bdzq4MTIAX_Ca8B8&_nc_oc=AQk766yw8K3IMUbAmHGz0qhZEfuFJayaHpdHffr-m_ybrct-3FuTuE3CTJmRjEH9WrQ&_nc_ht=scontent.fhan2-4.fna&oh=00_AT9LEJZQ8G6H15KKoJVPkkUftoO5mCj46FqVtVRhwPX1kQ&oe=62223CC9);
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -90px;
+}
+
+.font-source {
+    font-family: SourceCodePro;
+}
+
+.middle-tab {
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-left: 1px solid rgba(0,0,0,.1);
+}

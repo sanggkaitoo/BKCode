@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('BKCode site admin') }}{% endblock %}
+
+{% block branding %}
+<!--<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('BKCode administration') }}</a></h1>-->
+{% load static %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/logo/Logo.png' %}" height="20px" />
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

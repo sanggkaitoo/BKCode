@@ -1,0 +1,43 @@
+.text-center {
+    font-family: SourceCodePro;
+    padding: 15px 0;
+}
+
+.exercise-content {
+    padding: 40px;
+}
+
+.sub-title-exercise {
+    font-size: 1.2em;
+    font-family: RobotoRegular;
+}
+
+.content-exercise {
+    margin-left: 25px;
+    line-height: 40px;
+}
+
+.example-title {
+    font-family: RobotoRegular;
+}
+
+.infor-ex th, .infor-ex td {
+    border-top: 0px;
+    border-bottom: 1px dotted #dee2e6;
+
+}
+
+.excercise-related ul {
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.excercise-related a {
+    color: #b20606;
+    transition: all ease 0.5s;
+}
+
+.excercise-related a:hover {
+    color: #d65555;
+    text-decoration: none;
+}

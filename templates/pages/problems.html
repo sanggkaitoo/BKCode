@@ -10,10 +10,11 @@
   <div class="row">
     <div class="col-lg-9 p-2">
       <div class="column">
-        <h3 class="table-head">Problems List</h3>
+        <h3 class="table-head m-0">Problems List</h3>
         <table id="problemsTable" class="table table-hover">
           <thead>
             <tr>
+              <!-- <th scope="col">ID</th> -->
               <th scope="col">ID</th>
               <th scope="col">Name</th>
               <th scope="col">Level</th>
@@ -24,7 +25,7 @@
           <tbody>
             {% for ex in exercise %}
             <tr>
-              <th scope="row">{{ ex.id }}</th>
+              <th scope="row">{{ ex.title }}</th>
               <td><a class="link-color" href="{% url 'exercise' ex.slug %}">{{ ex.name }}</a></td>
               <td><span class="level level-{{ ex.level }}">{{ ex.level }}</span></td>
               <td>@{{ ex.category }}</td>

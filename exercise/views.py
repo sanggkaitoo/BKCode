@@ -15,10 +15,6 @@ def index(request):
     return render(request, 'pages/problems.html', context)
 
 
-# class ExerciseView ():
-#     def get(self, request):
-#
-
 # @login_required(login_url='login-page')
 def exercise(request, slug):
     try:
@@ -31,11 +27,3 @@ def exercise(request, slug):
         return render(request, 'pages/exercise.html', context)
     except Exercise.DoesNotExist:
         return render(request, 'pages/login.html')
-
-    # exercise = get_object_or_404(Exercise, slug=slug)
-    #
-    # context = {
-    #     'exercise': exercise
-    # }
-    #
-    # return render(request, 'pages/exercise.html', context)

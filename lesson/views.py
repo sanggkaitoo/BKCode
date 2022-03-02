@@ -35,8 +35,6 @@ def lesson_content(request, slug, lesson_choose):
         for item in lesson:
             list_lesson.append([item, slugify(item.section)])
 
-        print(list_lesson)
-
         content = Lesson.objects.filter(slug__contains=lesson_choose, slug__startswith=slug).first()
 
         subject = slugify(content.subject)

@@ -1,0 +1,48 @@
+{% extends 'pages/layout/base.html' %}
+
+{% load static %}
+{% load editorjs %}
+
+{% block cssblock %}
+
+    <link rel="stylesheet" href="{% static 'css/pages/profile.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row justify-content-md-center">
+    <div class="col-lg-8 wrap-bg">
+        <div class="column profile-wrap">
+            <div class="avatar m-auto"></div>
+            <p class="text-center mt-2 font-source">{{ user.username }}</p>
+            <p class="pl-5 pr-5 text-center">{{ user.bio }}</p>
+            <hr>
+            <p>Full name:</p>
+            <p>School: </p>
+            <p>Major:</p>
+            <p>Facebook:</p>
+            <hr>
+            <div class="row text-center">
+                <div class="col-lg-4">
+                    <p>Summited</p>
+                    <p class="font-source">{{ submit.0 }}</p>
+                </div>
+                <div class="col-lg-4 middle-tab">
+                    <p>Accepted</p>
+                    <p class="font-source">{{ submit.1 }}</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Point</p>
+                    <p class="font-source">{{ submit.2 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block jsblock %}
+
+
+{% endblock %}

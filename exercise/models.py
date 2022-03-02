@@ -1,3 +1,5 @@
+import os
+
 from django.db import models
 from django.contrib.auth import get_user_model
 from django_editorjs_fields import EditorJsTextField
@@ -17,6 +19,24 @@ class CategoryExercise(models.Model):
 
     def __str__(self):
         return self.name
+
+
+def change_name_file_input(instance, filename):
+    slug = unique_slug_generator(instance)
+    upload_to = 'exercise/{}'.format(slug)
+    ext = filename.split('.')[-1]
+    filename = 'input_{}.{}'.format(slug, ext)
+
+    return os.path.join(upload_to, filename)
+
+
+def change_name_file_output(instance, filename):
+    slug = unique_slug_generator(instance)
+    upload_to = 'exercise/{}'.format(slug)
+    ext = filename.split('.')[-1]
+    filename = 'output_{}.{}'.format(slug, ext)
+
+    return os.path.join(upload_to, filename)
 
 
 class Exercise(models.Model):
@@ -39,6 +59,8 @@ class Exercise(models.Model):
     language = models.ManyToManyField(ProgrammingLanguage)
     memory_limits = models.IntegerField()
     time_limits = models.IntegerField()
+    test_input = models.FileField(upload_to=change_name_file_input, null=True, blank=True)
+    test_output = models.FileField(upload_to=change_name_file_output, null=True, blank=True)
     is_published = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     published_on = models.DateTimeField(null=True, blank=True)

@@ -12,4 +12,6 @@ urlpatterns = [
     path('sign-up/', user_views.register, name='signup-page'),
     path('problems/', include('exercise.urls')),
     path('learn/', include('lesson.urls')),
+    path('status/', include('code_submission.urls')),
+    path('profile/', include('user_profile.urls'))
 ]
