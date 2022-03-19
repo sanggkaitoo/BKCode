@@ -294,4 +294,36 @@ select {
     color: #b20606;
     text-decoration: underline;
 }
+
+.contest-tab a{
+    color: #333333 !important;
+}
+
+.contest-tab:hover a {
+    color: #b20606 !important;
+    text-decoration: none;
+}
+
+.contest-tab:hover {
+    border-left: 2px solid #b20606;
+}
+
+.text-create-class {
+    color: #fff;
+}
+
+.text-create-class:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-sign-up:hover .text-sign-up {
+    color: #fff !important;
+}
+
+.text-sign-up:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* End body */

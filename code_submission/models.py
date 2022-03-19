@@ -5,6 +5,8 @@ from django.db.models.fields import DateTimeField
 from programming_language.models import ProgrammingLanguage
 
 from exercise.models import Exercise
+from contest.models import Contest
+from classes.models import Class
 
 
 User = get_user_model()
@@ -13,6 +15,8 @@ User = get_user_model()
 class CodeSubmission(models.Model):
     user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    contest = models.ForeignKey(Contest, on_delete=models.CASCADE, null=True, blank=True)
+    class_obj = models.ForeignKey(Class, on_delete=models.CASCADE, null=True, blank=True)
     code = models.TextField()
     # status_list = (
     #     ("AC", "Accepted"),

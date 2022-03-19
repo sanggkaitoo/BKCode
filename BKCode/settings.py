@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'classes',
     'class',
     'code_submission',
     'contest',
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'lesson',
     'programming_language',
     'user_profile',
-    'django_editorjs_fields'
+    'django_editorjs_fields',
+    'route'
 ]
 
 MIDDLEWARE = [

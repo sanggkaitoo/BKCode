@@ -1,0 +1,44 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+{% load editorjs %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9 p-2">
+      <div class="column">
+        <h3 class="table-head m-0">Problems List</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Tag</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for ex in list_problems %}
+                <tr>
+                  <th scope="row">{{ ex.0.slug }}</th>
+                  <td><a class="link-color" href="{% url 'contest-problems-detail' contest.slug ex.0.slug %}">{{ ex.0.name }}</a></td>
+                  <td><span class="level level-{{ ex.0.level }}">{{ ex.0.level }}</span></td>
+                  <td>@{{ ex.0.category }}</td>
+                  <td>{{ ex.1 }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% include 'pages/layout/contest-tab.html' %}
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

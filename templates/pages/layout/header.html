@@ -7,32 +7,32 @@
                 <img src="{% static 'images/logo/Logo.png' %}" alt="Logo" height="30px;">
             </a>
         </div>
-        <li class="navbar-item active">
+        <li class="navbar-item {% if nbar == 'problem' %}active{% endif %}">
             <a href="{% url 'problems-page' %}">
                 <i class="fas fa-th"></i>
                 Problems
             </a>
         </li>
-        <li class="navbar-item">
+        <li class="navbar-item {% if nbar == 'learn' %}active{% endif %}">
             <a href="{% url 'learn-page' %}">
                 <i class="fas fa-graduation-cap"></i>
                 Learn
             </a>
         </li>
-        <li class="navbar-item">
-            <a href="">
+        <li class="navbar-item {% if nbar == 'class' %}active{% endif %}">
+            <a href="{% url 'class-page' %}">
                 <i class="fas fa-users-class"></i>
                 Class
             </a>
         </li>
-        <li class="navbar-item">
-            <a href="">
+        <li class="navbar-item {% if nbar == 'contest' %}active{% endif %}">
+            <a href="{% url 'contest-page' %}">
                 <i class="fas fa-trophy"></i>
                 Contest
             </a>
         </li>
-        <li class="navbar-item">
-            <a href="">
+        <li class="navbar-item {% if nbar == 'about-us' %}active{% endif %}">
+            <a href="{% url 'aboutus-page' %}">
                 <i class="fas fa-info-circle"></i>
                 About Us
             </a>

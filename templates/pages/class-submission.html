@@ -1,0 +1,63 @@
+{% extends 'pages/layout/base.html' %}
+
+{% load static %}
+{% load editorjs %}
+
+{% block cssblock %}
+
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-9">
+        <div class="column pt-2">
+            <h3 class="table-head m-0">Submissions</h3>
+            <table id="problemsTable" class="table table-hover result-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">#</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Exercise</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Memory</th>
+                    <th scope="col">Language</th>
+                    <th scope="col">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in list_submission %}
+                    <tr>
+                        <th scope="row" class="text-center date-column">{{ item.date_submit }}</th>
+                        <td><a class="link-color" href="{% url 'user-page' %}">{{ item.user.username }}</a></td>
+                        <td><span class="" id="status">{{ item.status }}</span></td>
+                        <td><a class="link-color" href="{% url 'exercise' item.exercise.slug %}">{{ item.exercise.title }}</a></td>
+                        <td>{{ item.time }}</td>
+                        <td>{{ item.memory }}</td>
+                        <td>{{ item.language }}</td>
+                        <td>
+                            <!-- <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                                Watch note
+                            </button> -->
+                            <a href="" data-toggle="modal" data-target="#exampleModal">
+                                Watch
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>
+   {% include 'pages/layout/class-tab.html' %}
+</div>
+{% endblock %}
+
+{% block jsblock %}
+
+<script src="{% static 'js/render_status.js' %}"></script>
+
+{% endblock %}

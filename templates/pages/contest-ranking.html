@@ -1,0 +1,61 @@
+{% extends 'pages/layout/base.html' %}
+
+{% load static %}
+{% load editorjs %}
+
+{% block cssblock %}
+
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-9">
+        <div class="column pt-2"> 
+            <h3 class="table-head m-0">Ranking</h3>
+            <table id="problemsTable" class="table table-hover result-table">
+            <thead>
+                <tr>
+                    {% comment %} <th scope="col" class="text-center">#</th> {% endcomment %}
+                    <th scope="col">User</th>
+                    {% comment %} <th scope="col">Time</th> {% endcomment %}
+                    <th scope="col">Total Score</th>
+                    {% for ex in list_problems %}
+                    <th scope="col">{{ ex.exercise.name }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in list_data %}
+                    <tr>
+                        {% comment %} <th scope="row" class="text-center date-column">{{ item.0 }}</th> {% endcomment %}
+                        <td>{{ item.0 }}</td>
+                        <td>{{ item.2 }}</td>
+                        <td>
+                        {% for ex in list_problems %}
+                            {% for jtem in item.1 %}
+                                {% if jtem.0 == ex.exercise.id %}
+                                    {{ jtem.1 }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>
+   {% include 'pages/layout/contest-tab.html' %}
+</div>
+{% endblock %}
+
+{% block jsblock %}
+
+<script src="{% static 'js/render_status.js' %}"></script>
+
+{% endblock %}

@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from exercise.models import Exercise
 from programming_language.models import ProgrammingLanguage
 from .models import CodeSubmission
+from contest.models import Contest
+from classes.models import Class
 
 from .utils import check_main
 
@@ -28,6 +30,19 @@ def code_submitted(request, slug):
     ex = Exercise.objects.get(slug=slug)
     language = request.POST["language"]
     source = request.POST["code-submit"]
+    contest = request.POST.get("contest", False)
+    classes = request.POST.get("class", False)
+
+    if contest is False:
+        contest_obj = None
+    else:
+        contest_obj = Contest.objects.get(id=contest)
+
+    if classes is False:
+        class_obj = None
+    else:
+        class_obj = Class.objects.get(id=classes)
+
 
     lang = ProgrammingLanguage.objects.get(id=language)
 
@@ -52,6 +67,8 @@ def code_submitted(request, slug):
         memory=0,
         language=lang,
         notes=notes,
+        contest=contest_obj,
+        class_obj=class_obj
     )
 
     new_compile.save()

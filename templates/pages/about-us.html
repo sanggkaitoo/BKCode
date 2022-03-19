@@ -1,0 +1,22 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+{% load editorjs %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static  'css/pages/learn.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-xl-12 column">
+        <p class="content-information">
+            {{ information.description | editorjs }}
+        </p> 
+    </div>
+  </div>
+{% endblock %}
+    
+{% block jsblock %}
+
+{% endblock %}

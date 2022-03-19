@@ -13,5 +13,9 @@ urlpatterns = [
     path('problems/', include('exercise.urls')),
     path('learn/', include('lesson.urls')),
     path('status/', include('code_submission.urls')),
-    path('profile/', include('user_profile.urls'))
+    path('profile/', include('user_profile.urls')),
+    path('contest/', include('contest.urls')),
+    path('error/', views.error, name='error-page'),
+    path('class/', include('classes.urls')),
+    path('about-us/', views.about_us, name='aboutus-page')
 ]

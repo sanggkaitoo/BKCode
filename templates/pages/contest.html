@@ -1,0 +1,47 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12 p-2">
+      <div class="column">
+        <h3 class="table-head m-0">All Contests</h3>
+        <table id="problemsTable" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Author</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ct in contests %}
+            <tr>
+              <th><a class="link-color" href="{% url 'contest-detail' ct.slug %}">{{ ct.name }}</a></th>
+              <td scope="row">{{ ct.date_start }}</td>
+              <td><span>{{ ct.date_start }}</span></td>
+              <td>{{ ct.organizer }}</td>
+              <td>
+                {% if ct.password %}
+                  {{ "yes" }}
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

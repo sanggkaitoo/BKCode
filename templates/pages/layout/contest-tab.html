@@ -1,0 +1,28 @@
+<div class="col-lg-3 p-2">
+    <div class="column">
+        <div class="tab-column contest-tab .transition-15">
+            <a href="{% url 'contest-detail' contest.slug %}">
+            <i class="fas fa-cloud-upload-alt mr-3"></i>
+            Overview
+            </a>
+        </div>
+        <div class="tab-column contest-tab .transition-15">
+            <a href="{% url 'contest-problems' contest.slug %}">
+            <i class="fal fa-books mr-3"></i>
+            Problems
+            </a>
+        </div>
+        <div class="tab-column contest-tab .transition-15">
+            <a href="{% url 'contest-submission' contest.slug %}">
+            <i class="fas fa-list mr-3"></i>
+            Submissions
+            </a>
+        </div>
+        <div class="tab-column contest-tab .transition-15">
+            <a href="{% url 'contest-ranking' contest.slug %}">
+            <i class="fal fa-chart-bar mr-3"></i>
+            Ranking
+            </a>
+        </div>
+    </div>
+</div>

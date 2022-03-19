@@ -38,13 +38,13 @@
                     <div class="col-lg-6 p-0">
                         <p class="title">For Teacher</p>
                         <p class="pr-4">Sign up, create class, add exercise and manage all your students. And you can create some exersice for other people to challlenge them.</p>
-                        <button class="btn btn-c btn-success btn-custom">Create Class</button>
+                        <button class="btn btn-c btn-success btn-custom"><a class="text-create-class" href="{% url 'login-page' %}" >Create Class</a></button>
                     </div>
                     <div class="col-lg-6 p-0">
                         <p class="title">For Student</p>
                         <p class="pr-4">BKCode is the best platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.</p>
-                        <button class="btn btn-c btn-outline-success btn-outline-custom">Sign up & Code</button>
-                    </div>
+                        <button class="btn btn-c btn-outline-success btn-outline-custom button-sign-up"><a class="text-sign-up" href="{% url 'login-page' %}"> Sign up & Code </a></button>
+                    </div>  
                 </div>
             </div>
             <div class="col-lg-6 ml-3">

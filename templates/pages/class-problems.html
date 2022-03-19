@@ -1,0 +1,41 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9 p-2">
+      <div class="column">
+        <h3 class="table-head m-0">Problems List</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Tag</th>
+                  <th scope="col">Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for ex in list_problems %}
+                <tr>
+                  <th scope="row">{{ ex.exercise.title }}</th>
+                  <td><a class="link-color" href="{% url 'class-problems-detail' ex.class_obj.slug ex.exercise.slug %}">{{ ex.exercise.name }}</a></td>
+                  <td><span class="level level-{{ ex.exercise.level }}">{{ ex.exercise.level }}</span></td>
+                  <td>@{{ ex.exercise.category }}</td>
+                </tr>
+                {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% include 'pages/layout/class-tab.html' %}
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

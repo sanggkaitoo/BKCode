@@ -1,3 +1,6 @@
 from django.db import models
+from django_editorjs_fields import EditorJsTextField
 
-# Create your models here.
+
+class AboutUs(models.Model):
+    description = EditorJsTextField()

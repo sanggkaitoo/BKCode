@@ -1,0 +1,41 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9 p-2">
+      <div class="column">
+        <h3 class="table-head m-0">Problems List</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">User</th>
+                  <th scope="col">Mail</th>
+                  <th scope="col">Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for stu in student_list %}
+                <tr>
+                  <th scope="row">{{ stu.0.student.id }}</th>
+                  <th scope="row">{{ stu.0.student.username }}</th>
+                  <th scope="row">{{ stu.0.student.email }}</th>
+                  <th scope="row">{{ stu.1 }} / {{ ex_count }}</th>
+                </tr>
+                {% endfor %}
+        </table>
+      </div>
+    </div>
+    {% include 'pages/layout/class-tab.html' %}
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

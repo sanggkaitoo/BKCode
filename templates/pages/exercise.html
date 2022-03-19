@@ -24,7 +24,7 @@
                 <h3 class="sub-title-exercise">Question</h3>
                 <p class="content-exercise">
                     {{ exercise.question | editorjs }}
-                </p>
+                </p> 
                 <h3 class="sub-title-exercise">Input</h3>
                 <p class="content-exercise">
                     {{ exercise.input | editorjs }}
@@ -52,6 +52,12 @@
         </div>
         <div class="column mt-4 p-4">
             <form action="{% url 'code_submitted' exercise.slug %}" method="POST">
+            {% if contest %}
+              <input type="hidden" class="form-control" name="contest" id="contest" value="{{ contest.id }}">
+            {% endif%}
+            {% if class %}
+              <input type="hidden" class="form-control" name="class" id="class" value="{{ class.id }}">
+            {% endif%}
                 {% csrf_token %}
                 <div>
                     <div class="mb-3">

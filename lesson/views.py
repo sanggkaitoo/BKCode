@@ -9,7 +9,8 @@ def index(request):
     list_course = Subjects.objects.all()
 
     context = {
-        'list_course': list_course
+        'list_course': list_course,
+        'nbar': 'learn'
     }
 
     return render(request, 'pages/learn.html', context)
@@ -43,6 +44,7 @@ def lesson_content(request, slug, lesson_choose):
             'lesson': list_lesson,
             'content': content,
             'subject': subject,
+            'nbar': 'learn'
         }
 
         return render(request, 'pages/lesson.html', context)

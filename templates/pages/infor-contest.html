@@ -1,0 +1,44 @@
+{% extends 'pages/layout/base.html' %}
+{% load static %}
+{% load editorjs %}
+
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/pages/problems.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9 p-2">
+      <div class="column">
+        <h3 class="table-head m-0">{{ contest.name }}</h3>
+        <p class="content-exercise p-4">
+          {{ contest.description | editorjs }}
+        </p>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Organizer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{ contest.slug }}</th>
+              <td>{{ contest.date_start }}</td>
+              <td>{{ contest.date_end }}</td>
+              <td>{{ contest.organizer }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% include 'pages/layout/contest-tab.html' %}
+  </div>
+{% endblock %}
+
+{% block jsblock %}
+
+{% endblock %}

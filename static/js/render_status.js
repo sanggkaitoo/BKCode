@@ -17,4 +17,3 @@ $(document).ready(function() {
         $('#status').text('Time Limit Exceeded')
     }
 })
-
