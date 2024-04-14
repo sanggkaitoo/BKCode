@@ -1,1 +1,2 @@
-# bigproject2
+# BKCode
+This is project that will create a website coding such as: LeetCode, HackerRank,...
